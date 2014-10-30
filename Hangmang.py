@@ -1,25 +1,34 @@
 #HANGMANG: THE VIDEO GAME 2K14
 
-import math
-import simplegui
 
-
-
-wordbank = []
+letters = []
+unknown = []
 
 def new_words():
-    global wordbank
-    
+    global letters
     n=int(input("Number of words Player 1 would like to input"))	
     
     for i in range(n):
         wrs=input("The words")
-        wordbank.append(wrs)
-   
-    return wordbank
+        letters.extend(wrs)
+        letters.append(" ")   
+    letters.pop(len(letters)-1)
+    
+    print letters
 
-print new_words()
 
 def hide_words():
-    global wordbank
+    global letters
     
+    for i in range(len(letters)):
+        unknown.append("_")
+    
+    print unknown
+    
+    
+def play_game():
+    
+    new_words()
+    hide_words()
+    
+play_game()

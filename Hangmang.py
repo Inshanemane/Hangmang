@@ -1,19 +1,25 @@
 #HANGMANG: THE VIDEO GAME 2K14
 
-
 letters1 = []
 letters2 = []
 letters3 = []
-
+space=[" "]
 unknown = []
+difficulty = []
+guessnumber = []
+
+
+
+
+def difficulty():
+    global diff
+    for i in range(1):
+    	diff=int(input("What difficulty would you like? 1 = Easy, 2 = Medium, 3 = Hard"))
+
+        
 
 def new_words():
-    global n
-    global wr1
-    global wr2
-    global letters1
-    global letters2
-    global letters3
+    global n, wr1 ,wr2 ,letters1, letters2,letters3
     
     
     n=int(input("Number of words Player 1 would like to input"))	
@@ -22,39 +28,60 @@ def new_words():
         if n == 2:
             wr1=input("The word1")
             letters1.extend(wr1)
-            letters1.append(" ") 
             wr2=input("The word2")
             letters2.extend(wr2)
-            letters2.append(" ") 
+            letters3.append(letters1+space+letters2)
+                        
+            print letters3      
             
-            letters3.append(letters1+letters2)
+            
+     
+        
+        if n == 1:
+            wr1=input("The word1")
+            letters1.extend(wr1)
+            print letters1
+         
     
     
-    print letters1
-    print letters2
-    print letters3
 def hide_words():
-    global n
-    global letters1
-    global letters2
+    global n, letters1, letters2
     
     
     for i in range(len(letters1)):
         unknown.append("_")
     
+    for p in range(len(space)):
+        unknown.append(" ")
+    
+    
     for z in range(len(letters2)):
         unknown.append("_")
 
         
-
         
     
     print unknown
+
+
+    
+def reveal_letter():
+    for i in range():
+        input("What is your guess?")
+    
+            
+    
     
     
 def play_game():
     
+    difficulty()
     new_words()
     hide_words()
-    
-play_game()
+    reveal_letter()
+
+play_game()        
+        
+        
+        
+        

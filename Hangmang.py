@@ -2,31 +2,48 @@
 
 
 letters1 = []
+letters2 = []
+letters3 = []
+
 unknown = []
 
 def new_words():
     global n
-    global wrs
-    global letters
+    global wr1
+    global wr2
+    global letters1
+    global letters2
+    global letters3
+    
+    
     n=int(input("Number of words Player 1 would like to input"))	
     
-    for i in range(n):
-        wrs=input("The words")
-        letters.extend(wrs)
-        letters.append(" ")   
-    letters.pop(len(letters)-1)
+    for i in range(1):
+        if n == 2:
+            wr1=input("The word1")
+            letters1.extend(wr1)
+            letters1.append(" ") 
+            wr2=input("The word2")
+            letters2.extend(wr2)
+            letters2.append(" ") 
+            
+            letters3.append(letters1+letters2)
     
-    print letters
-
-
+    
+    print letters1
+    print letters2
+    print letters3
 def hide_words():
     global n
-    global letters
+    global letters1
+    global letters2
     
     
-    for i in range(len(letters)):
+    for i in range(len(letters1)):
         unknown.append("_")
     
+    for z in range(len(letters2)):
+        unknown.append("_")
 
         
 

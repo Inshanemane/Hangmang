@@ -1,10 +1,12 @@
 #HANGMANG: THE VIDEO GAME 2K14
 
 
-letters = []
+letters1 = []
 unknown = []
 
 def new_words():
+    global n
+    global wrs
     global letters
     n=int(input("Number of words Player 1 would like to input"))	
     
@@ -18,10 +20,17 @@ def new_words():
 
 
 def hide_words():
+    global n
     global letters
+    
     
     for i in range(len(letters)):
         unknown.append("_")
+    
+
+        
+
+        
     
     print unknown
     

@@ -26,10 +26,10 @@ lose = 0
 
 #FUNCTION FOR DIFFICULTY CHANGE
 def difficulty():
-    global diff
-    for i in range(1):
-        diff=int(input("What difficulty would you like? 6 = Easy, 5 = Medium, 4 = Hard"))
-		lose+=
+    global diffi
+    
+    diffi=int(input("What difficulty would you like? 9 = Easy, 7 = Medium, 5 = Hard"))
+        
         
 #FUNCTION THAT GRABS WORDS FROM P1
 def new_words():
@@ -83,7 +83,7 @@ def hide_words():
     
     
 def reveal_letter():
-    global o, wr1 ,wr2, wr3 ,letters1, letters2, letters3, diff, win, lose
+    global o, wr1 ,wr2, wr3 ,letters1, letters2, letters3, diffi, win, lose
     for i in range(len(wr3)-1):
         n=input("What is your guess?")
         if n in wr3:
@@ -92,23 +92,39 @@ def reveal_letter():
             guesslist.insert(pos,n)
             print "You guessed", n, "It was correct!"
             print
-        	win+=1
+            win+=1
+        	for z in range():
+                index = 0
+                wr3.find(n,index)
+                print n, "found at 
+        
+        
+        
         else:
             print "You guessed", n, "It was incorrect!"
-        	print
-    		lose+=1
+            print
+            lose+=1
     
         print guesslist
     
     
     
 def play_game():
+    global diffi, lose, win, wr3
     
     difficulty()
     new_words()
     hide_words()
     reveal_letter()
 
+    if lose > diffi:
+        print
+        print "You lose"
+
+    if win > (len(wr3)-2):
+        print
+        print "You win"
+    
 play_game()
 
 

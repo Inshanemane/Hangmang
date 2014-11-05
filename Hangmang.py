@@ -1,8 +1,5 @@
 #HANGMANG: THE VIDEO GAME 2K14
 
-#You have guessed 
-#Letters: a b c etc
-
 #LETTERS
 letters1 = []
 letters2 = []
@@ -11,22 +8,49 @@ letters3 = []
 #SPACE FOR 2 WORDS
 space=[" "]
 space2=(" ")
+
 #UNDERSCORE
 unknown = []
 
 #NUMBER CHANGES CHANCES
 difficulty = []
 
+#List that reveals correctly guessed letters
 guesslist = []
 
+#WIN, when the win hits the max game beat
 win = 0
 
+#LOSE, when the lose hits the max game over
 lose = 0
 
+print "                                _____ "
+print "|        |     /\     |\     | |        "              
+print "|        |    /  \    | \    | |         "         
+print "||||||||||   /____\   |  \_  | |   ___    "                
+print "|        |  /      \  |    \ | |      |    "              
+print "|        | /        \ |     \| |______|     "                    
 
+print
+
+print "                                _____    "
+print "|\      /|     /\     |\     | |          "                
+print "| |    | |    /  \    | \    | |           "                                                   
+print "| |    | |   /____\   |  \_  | |   ___      " 
+print "|  \  /  |  /      \  |    \ | |      |      "  
+print "|   \/   | /        \ |     \| |______|       "             
+
+print
+print "                 2K14"
+print
+
+print "WARNING:"
+print "______________________________________________________________________"
+print
 print "This game is terrible and requires you to input a letter a second time"
 print "if there are two or more instances of a letter"
-
+print "______________________________________________________________________"
+print
 
 
 
@@ -40,8 +64,8 @@ def difficulty():
 #FUNCTION THAT GRABS WORDS FROM P1
 def new_words():
     global o, wr1 ,wr2, wr3 ,letters1, letters2, letters3, space2
-    
-    o=int(input("Number of words Player 1 would like to input"))	
+    #Determines how many words up to 2
+    o=int(input("Number of words Player 1 would like to input, up to 2"))	
     
     for i in range(1):
         if o == 2:
@@ -51,7 +75,7 @@ def new_words():
             letters2.extend(wr2)
             letters3.append(letters1+space+letters2)
             wr3 = (wr1+space2+wr2)           
-            print letters3      
+                 
             
             
      
@@ -61,7 +85,7 @@ def new_words():
             letters1.extend(wr1)
             wr3 = (wr1)
             print letters1
-         
+            print 
     
     
 def hide_words():
@@ -84,7 +108,7 @@ def hide_words():
             guesslist.append("_")               
         
     print unknown
-    
+    print
     
     
     

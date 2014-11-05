@@ -64,16 +64,23 @@ def difficulty():
 #FUNCTION THAT GRABS WORDS FROM P1
 def new_words():
     global o, wr1 ,wr2, wr3 ,letters1, letters2, letters3, space2
+    
     #Determines how many words up to 2
     o=int(input("Number of words Player 1 would like to input, up to 2"))	
     
     for i in range(1):
         if o == 2:
-            wr1=input("The 1st word")
+            
+            wr1=str.lower(input("The 1st word"))
+            
             letters1.extend(wr1)
-            wr2=input("The 2nd word")
+            
+            wr2=str.lower(input("The 2nd word"))
+            
             letters2.extend(wr2)
+            
             letters3.append(letters1+space+letters2)
+            
             wr3 = (wr1+space2+wr2)           
                  
             
@@ -81,9 +88,13 @@ def new_words():
      
         
         if o == 1:
-            wr1=input("The 1st word")
+            
+            wr1=str.lower(input("The 1st word"))
+            
             letters1.extend(wr1)
+            
             wr3 = (wr1)
+            
             print letters1
             print 
     
@@ -117,7 +128,7 @@ def reveal_letter():
     
     if o == 2:
         for i in range(len(wr3)-1):
-            n=input("What is your guess?")
+            n=str.lower(input("What is your guess?"))
             if n in wr3:
                 pos = wr3.index(n)
                 guesslist.pop(pos)
@@ -146,12 +157,19 @@ def reveal_letter():
     if o == 1:
         for i in range(len(wr3)):
             n=input("What is your guess?")
+            
             if n in wr3:
+                
                 pos = wr3.index(n)
+                
                 guesslist.pop(pos)
+                
                 guesslist.insert(pos,n)
+                
                 wr3=list(wr3)
+                
                 wr3.pop(pos)
+                
                 wr3.insert(pos,"+")
                 
                 print guesslist
@@ -169,9 +187,7 @@ def reveal_letter():
                 lose+=1
                 
             
-        
-    
-    
+          
     
     
 def play_game():
@@ -199,7 +215,3 @@ def play_game():
     
     
 play_game()
-
-
-
-#LOWERCASE

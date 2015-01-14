@@ -1,0 +1,30 @@
+#Project 4 (Redo of project 1 with GUI)
+
+import simplegui
+
+
+
+#def word_grab():
+ #   pass
+ #   num_words = int(input("Number of words player wants to guess"))
+   
+    
+def guess_handler():
+    pass
+    
+    
+    
+def draw_handler(canvas):    
+    canvas.draw_text('HANGMANG',(25,55),24,'white',"monospace")
+    line = canvas.draw_line((200, 300), (208, 300), 3, 'white')
+    
+#def play_game():
+   # word_grab()
+    
+
+#play_game()    
+#Frame
+frame = simplegui.create_frame("HANGMANG", 400, 400)
+frame.set_draw_handler(draw_handler)
+frame.add_input('Guess', guess_handler, 50)
+frame.start()

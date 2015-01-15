@@ -3,10 +3,21 @@
 import simplegui
 
 
+nloc = {}
+
+
+class MANG:
+    
+    def __innit__(self,words,location):
+        self.words = words
+        self.location = location
+
+
+
 
 #def word_grab():
- #   pass
- #   num_words = int(input("Number of words player wants to guess"))
+
+ #   let = int(input("Number of words player wants to guess"))
    
     
 def guess_handler():
@@ -15,8 +26,24 @@ def guess_handler():
     
     
 def draw_handler(canvas):    
-    canvas.draw_text('HANGMANG',(25,55),24,'white',"monospace")
-    line = canvas.draw_line((200, 300), (208, 300), 3, 'white')
+    canvas.draw_text('HANGMANG',(25,55),29,'white',"monospace")
+    
+    word_line = canvas.draw_line((nloc.get[let]+200, 300), (nloc.get[let]+208, 300), 2, 'white')
+
+#Draw as
+#canvas.draw_line((n+200, 300), (n+208, 300), 2, 'white')
+#In order to have it draw along corresponding to the nubmer of 
+#letters or words n should be a getter from a dictionary 
+
+    
+    #Head
+    canvas.draw_circle((460, 100), 20, 4, 'white')
+    #Body
+    canvas.draw_line((460, 120), (460, 170), 4, 'white')
+    #Arm
+    canvas.draw_line((455, 130), (465, 130), 4, 'white')
+    canvas.draw_line((465, 130), (460, 130), 4, 'white')
+    canvas.draw_line((10, 20), (30, 40), 4, 'white')
     
 #def play_game():
    # word_grab()
@@ -24,7 +51,7 @@ def draw_handler(canvas):
 
 #play_game()    
 #Frame
-frame = simplegui.create_frame("HANGMANG", 400, 400)
+frame = simplegui.create_frame("HANGMANG", 600, 600)
 frame.set_draw_handler(draw_handler)
 frame.add_input('Guess', guess_handler, 50)
 frame.start()
